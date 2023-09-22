@@ -17,6 +17,7 @@ class NavBarButton extends StatefulWidget {
   final double? fontSize;
   final FontStyle? fontStyle;
   final OnButtonPressCallback onTap;
+  final int? durationIcon;
   const NavBarButton({
     Key? key,
     required this.icon,
@@ -31,7 +32,7 @@ class NavBarButton extends StatefulWidget {
     required this.itemCount,
     required this.fontWeight,
     required this.fontSize,
-    required this.fontStyle,
+    required this.fontStyle,  this.durationIcon,
   }) : super(key: key);
 
   @override
@@ -47,7 +48,7 @@ class _NavBarButtonState extends State<NavBarButton>
     super.initState();
     _animationController = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 600),
+      duration:  Duration(milliseconds:widget.durationIcon?? 600),
     );
 
     if (widget.isSelected) {

@@ -47,6 +47,7 @@ class NavBarBody extends StatelessWidget {
           (BarItem item) {
             final int buttonIndex = buttons.indexOf(item);
             return NavBarButton(
+              durationIcon: buttons[buttonIndex].duration,
               icon: item.icon,
               size: iconSize,
               title: item.title,

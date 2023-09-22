@@ -12,10 +12,14 @@ class BarItem {
 
   /// ber item text which shown when item is active.
   final String title;
-  BarItem({
+
+  /// duration icon
+  final int? duration;
+  BarItem( {
     required this.title,
     required this.icon,
     this.activeColor,
     this.inactiveColor,
+    this.duration,
   });
 }
