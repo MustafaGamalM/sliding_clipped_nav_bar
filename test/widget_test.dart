@@ -12,14 +12,14 @@ void main() {
       baseStructure(<BarItem>[
         _barItem,
         _barItem,
-      ], false),
+      ], false , 60),
     );
 
     await tester.pumpWidget(
       baseStructure(<BarItem>[
         _barItemWithColor,
         _barItemWithColor,
-      ], true),
+      ], true , 90),
     );
 
     expect(
@@ -42,14 +42,14 @@ void main() {
       baseStructure(<BarItem>[
         _barItem,
         _barItem,
-      ], false),
+      ], false , 100),
     );
 
     await tester.pumpWidget(
       baseStructure(<BarItem>[
         _barItemWithColor,
         _barItemWithColor,
-      ], true),
+      ], true , 10),
     );
 
     tester.verifyTickersWereDisposed();
@@ -62,13 +62,13 @@ void main() {
     expect(() async {
       await tester.pumpWidget(baseStructure(<BarItem>[
         _barItem,
-      ], false));
+      ], false , 100));
     }, throwsAssertionError);
 
     expect(() async {
       await tester.pumpWidget(baseStructure(<BarItem>[
         _barItemWithColor,
-      ], true));
+      ], true,60));
     }, throwsAssertionError);
 
     expect(() async {
@@ -78,7 +78,7 @@ void main() {
         _barItem,
         _barItem,
         _barItem,
-      ], false));
+      ], false,50));
     }, throwsAssertionError);
 
      expect(() async {
@@ -88,7 +88,7 @@ void main() {
         _barItemWithColor,
         _barItemWithColor,
         _barItemWithColor,
-      ], true));
+      ], true,30));
     }, throwsAssertionError);
   });
 
@@ -100,7 +100,7 @@ void main() {
       await tester.pumpWidget(baseStructure(<BarItem>[
         _barItemWithColor,
         _barItemWithColor,
-      ], false));
+      ], false,120));
     }, throwsAssertionError);
   });
 
@@ -112,7 +112,7 @@ void main() {
       await tester.pumpWidget(baseStructure(<BarItem>[
         _barItem,
         _barItem,
-      ], true));
+      ], true,40));
     }, throwsAssertionError);
   });
 }

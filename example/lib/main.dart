@@ -71,6 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       bottomNavigationBar: _colorful
           ? SlidingClippedNavBar.colorful(
+             bottomNavHeight: 60,
               backgroundColor: Colors.white,
               onButtonPressed: onButtonPressed,
               iconSize: 30,
@@ -104,6 +105,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ],
             )
           : SlidingClippedNavBar(
+              bottomNavHeight: 60,
               backgroundColor: Colors.white,
               onButtonPressed: onButtonPressed,
               iconSize: 30,
